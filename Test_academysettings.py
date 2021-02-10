@@ -1,29 +1,10 @@
 from webbrowser import Chrome
-
 import pytest
 import time
+from Test_login import *
 
-
-# noinspection PyGlobalUndefined
-class Test_academysettings():
-    from selenium import webdriver
-    global webdriver
-    webdriver.Chrome("C:\\Users\\asus\\PycharmProjects\\Wiziqxt\\drivers\\chromedriver.exe")
-
-
-    @pytest.fixture()
-    def test_a_login(self):
-        self.webdriver = webdriver.Chrome("C:\\Users\\asus\\PycharmProjects\\Wiziqxt\\drivers\\chromedriver.exe")
-        self.webdriver.get("http://admin2016.ng.pre.wiziqinternal.com/authentication/login")
-        self.webdriver.maximize_window()
-        #login
-        self.webdriver.find_element_by_id("email").click()
-        self.webdriver.find_element_by_id("email").send_keys("test2016@mailinator.net")
-        self.webdriver.find_element_by_id("password").click()
-        self.webdriver.find_element_by_id("password").send_keys("111111111111111")
-        self.webdriver.find_element_by_class_name("mdl-button__ripple-container").click()
-        print("Login Is Complete")
-
+@pytest.mark.run(order=5)
+class Test_academysettings(Test_login):
 
     @pytest.fixture()
     def test_b_settings(self, test_a_login):
