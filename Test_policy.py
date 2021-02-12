@@ -3,7 +3,7 @@ import pytest
 import time
 from Test_login import *
 
-@pytest.mark.run(order=7)
+@pytest.mark.run(order=8)
 class Test_policy(Test_login):
 
     def test_b_policy(self, test_a_login):

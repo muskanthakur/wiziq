@@ -3,7 +3,7 @@ import pytest
 import time
 from Test_login import *
 
-@pytest.mark.run(order=6)
+@pytest.mark.run(order=7)
 class Test_reports(Test_login):
 
     def test_b_reportslist(self, test_a_login):

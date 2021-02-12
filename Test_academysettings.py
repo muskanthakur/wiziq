@@ -3,7 +3,7 @@ import pytest
 import time
 from Test_login import *
 
-@pytest.mark.run(order=5)
+@pytest.mark.run(order=6)
 class Test_academysettings(Test_login):
 
     @pytest.fixture()
